@@ -24,6 +24,7 @@ public class CustomView extends View {
     private ArrayList<Paint> undonePaints = new ArrayList<Paint>();
     private Bitmap mBitmap;
     private Canvas mCanvas;
+    public int mColor;
     private Path mPath;
     public Paint mPaint;
 
@@ -96,7 +97,6 @@ public class CustomView extends View {
 
     }
     public void setColor(int color){
-        mPaint = new Paint();
         mPaint.setColor(color);
         mPaint.setAntiAlias(true);
         //色を滑らかにする
@@ -108,6 +108,7 @@ public class CustomView extends View {
     }
 
     private void touch_start(float x, float y){
+        this.setColor(mColor);
         mPath.reset();
         mPath.moveTo(x,y);
         mx = x;
@@ -130,6 +131,7 @@ public class CustomView extends View {
         mPath.lineTo(mx,my);
         mCanvas.drawPath(mPath,mPaint);
         mPath = new Path();
+        mPaint = new Paint();
         paths.add(mPath);
         paints.add(mPaint);
     }
@@ -138,6 +140,7 @@ public class CustomView extends View {
         mCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
         paths.clear();
         paints.clear();
+        invalidate();
     }
 
     public void onClickUndo(){

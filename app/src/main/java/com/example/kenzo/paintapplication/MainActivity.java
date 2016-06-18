@@ -20,28 +20,32 @@ public class MainActivity extends AppCompatActivity {
         redbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                view1.setColor(Color.RED);
+                view1.mColor = Color.RED;
+                view1.setColor(view1.mColor);
             }
         });
         Button blackbtn = (Button)findViewById(R.id.black);
         blackbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                view1.setColor(Color.BLACK);
+                view1.mColor = Color.BLACK;
+                view1.setColor(view1.mColor);
             }
         });
         Button yellowbtn = (Button)findViewById(R.id.yellow);
         yellowbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                view1.setColor(Color.YELLOW);
+                view1.mColor = Color.YELLOW;
+                view1.setColor(view1.mColor);
             }
         });
         Button erasebtn = (Button)findViewById(R.id.erase);
         erasebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                view1.setColor(Color.WHITE);
+                view1.mColor = Color.WHITE;
+                view1.setColor(view1.mColor);
             }
         });
 
